@@ -8,7 +8,7 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *current, *head1, *head2, *next;
-	bool stop;
+	int stop;
 
 	if (list)
 	{
@@ -18,7 +18,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			if (head1->next)
 			{
-				stop = false;
+				stop = 0;
 				head2 = head1;
 				while (head2 && head2->n > head2->next->n)
 				{
@@ -40,10 +40,10 @@ void insertion_sort_list(listint_t **list)
 					if (!next->prev)
 						*list = next;
 					print_list(*list);
-					stop = true;
+					stop = 1;
 				}
 			}
-			if (!flag)
+			if (stop == 0)
 				head1 = head1->next;
 		}
 	}
