@@ -40,7 +40,7 @@ void insertion_sort_list(listint_t **list)
 					if (!next->prev)
 						*list = next;
 					print_list(*list);
-					stop = 1;
+					stop = true;
 				}
 			}
 			if (!flag)
